@@ -10,6 +10,7 @@ module sn74169(
  //                and !U_DB: count down
 
     always @(posedge CLK)
+	begin
 	RCOB=1;
 	    
         if(!LOADB)
