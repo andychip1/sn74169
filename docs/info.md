@@ -9,11 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+Verilog coded version of the SN74169.
 
 ## How to test
 
-Explain how to use your project
+I'll write a testbench
 
 ## External hardware
 
