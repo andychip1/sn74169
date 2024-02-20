@@ -11,7 +11,7 @@ module sn74169(
 
     always @(posedge CLK)
     begin
-	    if(Q==15 & U_DB) | (Q==0 & !U_DB)
+	    if(Q==15 && U_DB) || (Q==0 && !U_DB)
 		RCOB=0;
 	    else
 		    RCOB=1;
@@ -19,7 +19,7 @@ module sn74169(
         if(!LOADB)
      		Q = A;
 	else
-		if (!ENPB & !ENTB)
+		if (!ENPB && !ENTB)
 			if(U_DB)
 				Q=Q+1;
 			else
