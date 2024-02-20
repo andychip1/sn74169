@@ -10,11 +10,7 @@ module sn74169(
  //                and !U_DB: count down
 
     always @(posedge CLK)
-    begin
-	    if(Q==15 & U_DB) || (Q==0 & !U_DB)
-		RCOB=0;
-	    else
-		    RCOB=1;
+	RCOB=1;
 	    
         if(!LOADB)
      		Q = A;
