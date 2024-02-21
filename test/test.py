@@ -16,13 +16,13 @@ async def test_ac(dut):
   # Load
   dut._log.info("Load")
   dut.ena.value = 1
-  dut.ui_in.value = 0
-  dut.uio_in.value = 12
+  dut.ui_in.value = 12
+  dut.uio_in.value = 0
   dut.rst_n.value = 0
   await ClockCycles(dut.clk, 2)
   dut.rst_n.value = 1
 
   await ClockCycles(dut.clk, 2)
 
-  #assert dut.uo_out.value == 60
-  assert 1
+  assert dut.uo_out.value == 60
+  
