@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Verilog coded version of the SN74169.
+Verilog model of the SN74169.
 
 ## How to test
 
-I'll write a testbench
+Observe load, count up, count down, and inhibit functions.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Oscilloscope to observe the outputs.
