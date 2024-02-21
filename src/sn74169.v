@@ -2,7 +2,7 @@ module sn74169(
            input  [3:0] A,  
            input  U_DB, input CLK, input ENPB, input ENTB, input LOADB,
 	   output reg [3:0] Q,
-	   output reg RCOB
+	   output RCOB
     );
 
  // loadb=0: load
@@ -11,8 +11,6 @@ module sn74169(
 
     always @(posedge CLK)
 	begin
-	RCOB=1;
-	    
         if(!LOADB)
      		Q = A;
 	else
@@ -21,8 +19,9 @@ module sn74169(
 				Q=Q+1;
 			else
 				Q=Q-1;
+		end
 
-    end
+	assign RCOB = !( (Q[3]&Q[2]&Q[1]&Q[0]&U_DB) | (!Q[3]&!Q[2]&!Q[1]&!Q[0]&!U_DB));
+
 
 endmodule
-
