@@ -18,7 +18,7 @@ module tt_um_andychip1_sn74169 (
 
   // All output pins must be assigned. If not used, assign to 0.
   assign uio_out = 0;
-  assign uio_oe  = 0;
+    assign uio_oe  = 8'b11111111;
   assign uo_out[7:6] = 2'b00;
   assign uo_out[5] = !ui_in[0];
 
