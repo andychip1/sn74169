@@ -22,7 +22,7 @@ async def test_ac(dut):
   await ClockCycles(dut.clk, 2)
   dut.rst_n.value = 1
   await ClockCycles(dut.clk, 2)
-  dut.ui_in.value = 128
+  dut.ui_in.value = 192
   await ClockCycles(dut.clk, 6)
   
   assert dut.uo_out.value == 16
