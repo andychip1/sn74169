@@ -14,16 +14,19 @@ async def test_ac(dut):
   cocotb.start_soon(clock.start())
 
   # Load
-  dut._log.info("Load")
+  dut._log.info("ResetLoad")
   dut.ena.value = 1
-  dut.ui_in.value = 195
+  dut.ui_in.value = 131
   dut.uio_in.value = 0
   dut.rst_n.value = 0
   await ClockCycles(dut.clk, 2)
   dut.rst_n.value = 1
+  dut._log.info("Load")
   await ClockCycles(dut.clk, 2)
   dut.ui_in.value = 192
+  dut._log.info("Up6")
   await ClockCycles(dut.clk, 6)
   
   assert dut.uo_out.value == 16
+  dut._log.info(dut.uo_out.value)
   
