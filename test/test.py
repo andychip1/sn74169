@@ -29,6 +29,8 @@ async def test_ac(dut):
   dut._log.info("Up6")
   await ClockCycles(dut.clk, 6)
   dut._log.info(dut.uo_out.value)
-  assert dut.uo_out.value == 16
+  
+  # 56 = 0011 1000  -- value 8 + RCOB*16 + !ui_in[0]*32
+  assert dut.uo_out.value == 56
   
   
